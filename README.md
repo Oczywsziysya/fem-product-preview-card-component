@@ -19,8 +19,6 @@ This is a solution to the [Product preview card component challenge on Frontend 
   - [Useful resources](#useful-resources)
 - [Author](#author)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
-
 ## Overview
 
 ### The challenge
@@ -61,7 +59,7 @@ I learned about some HTML attributes and CSS properties that come in handy when 
 #### The HTML stuff
 
 * **\[HTML `<img>` attribute\] width/height** - These are just size hints. Even if we choose to deal with image sizing through CSS properties, if we previously know the "base-size" of an image, it's a good practice to indicate it in the HTML inside the `<img>` tag. Why? Because that way the browser will know how much space should be reserved to that image even if it hasn't loaded yet. This prevents sudden text jumps on the page when the image finishes loading. Also, **these attributes' values should be unitless**: you shouldn't write `width="200px"`, but just `width="200"`.
-* **\[HTML `<img>` attribute\] loading** - This img attribute is used to tell the browser whether the image's loading should be delayed until it's near the viewport. It's default value is `loading="eager"`. In order to delay the image's loading until the user has scrolled far down enough, `loading="lazy"` should be used. One should not use lazy for images above the fold, only for those that are below the fold, since the user has to scroll down to reach them. For lazy images, if the user doesn't get to them, they'll never load, so that way bandwidth is not wasted. This wasn't necessary for this challenge in particular, but it's good to know anyway.
+* **\[HTML `<img>` attribute\] loading** - This img attribute is used to tell the browser whether the image's loading should be delayed until it's near the viewport. Its default value is `loading="eager"`. In order to delay the image's loading until the user has scrolled far down enough, `loading="lazy"` should be used. One should not use lazy for images above the fold, only for those that are below the fold, since the user has to scroll down to reach them. For lazy images, if the user doesn't get to them, they'll never load, so that way bandwidth is not wasted. This wasn't necessary for this challenge in particular, but it's good to know anyway.
 * **\[HTML `<img>` attribute\] fetchpriority** - If a image is very important and therefore should be prioritized, one can use `fetchpriority="high"`. It should only be used if the image is *really* important, since it will cause other stuff like scripts or fonts to be de-preoritized when the page is being loaded.
 * **Tags `<picture>` and `<source>` (with the attributes 'srcset' and 'media')** - The `<picture>` tag always wraps a `<img>` tag and is used to provide alternative source images for a certain image. The alternative images can be of different size, format, pixel density, etc. For instance:
 ```html
@@ -76,7 +74,7 @@ It's worth mentioning that the media condition is not mandatory. If the browser,
 
 #### The CSS stuff
 
-* **`aspect-ratio: x/y`** - Used to render the image with an aspect-ratio that differs from the image's real dimensions. For instance, if we have `aspect-ration: 2/1`, then the image's width will be twice it's height.
+* **`aspect-ratio: x/y`** - Used to render the image with an aspect-ratio that differs from the image's real dimensions. For instance, if we have `aspect-ration: 2/1`, then the image's width will be twice its height.
 * **`object-fit: contain`** - tells the browser to preserve the image's aspect ratio, even if that means leaving empty space above and below. Generally speaking, the `object-fit` property specifies how the replaced element's content object should be fitted to the containing element's box. Some of the values it can take are: 'fill', 'contain', 'cover', 'scale-down' or 'none'.
 * **`object-fit: cover`** - tells the browser to preserve the image's aspect ratio, even if that means cropping the image at the top and bottom.
 * **`object-position: ...`** - If `object-fit: cover` crops the image in a problematic way, this property can be used to change the focus of the crop. It can take keywords like 'top', 'bottom', 'right top', 'top center', or percentage/length values, or even edge offsets values.
